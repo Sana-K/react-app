@@ -2,14 +2,9 @@ sudo: required
 services:
   - docker
 
-before_instal:
-  - docker build -t 2021skc02/reactapp -f Dockerfile.dev .
+before_install:
+  - docker build -t 2021skc02/app -f Dockerfile.dev .
+
 
 script:
-  - docker run 2021skc02/reactapp npm run test -- --coverage
-=======
-  - docker build -t 2021skc02/reactApp -f Dockerfile.dev .
-
-script:
-  - docker run 2021skc02/reactApp npm run test -- --coverage
->>>>>>> fb13ffaa8024cb59a40f4f180cb417b90e716801
+  - docker run 2021skc02/app npm run test -- --coverage
