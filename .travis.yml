@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t 2021skc02/reactApp -f Dockerfile.dev .
+
+script:
+  - docker run 2021skc02/reactApp npm run test -- --coverage
